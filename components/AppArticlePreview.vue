@@ -1,13 +1,20 @@
 <template>
   <NuxtLink
-    class="flex group rounded-lg overflow-hidden focus:outline-none"
-    to="/"
+    class="
+      flex flex-col
+      sm:flex-row
+      group
+      rounded-lg
+      overflow-hidden
+      focus:outline-none
+    "
+    :to="'/posts/' + post.uid"
   >
     <div
       class="
         flex-shrink-0
-        w-24
-        h-24
+        w-full
+        h-36
         sm:h-auto
         sm:w-48
         relative
@@ -30,9 +37,10 @@
     </div>
     <article
       class="
-        pl-8
+        mt-6
+        sm:pl-8
         z-10
-        pr-10
+        sm:pr-10
         sm:group-hover:bg-gray-100
         sm:py-8
         sm:mt-3
@@ -48,7 +56,7 @@
         sm:group-focus:bg-gray-100
       "
     >
-      <span class="hidden sm:block font-mono text-gray-400">
+      <span class="font-mono text-gray-400">
         {{ formatedDate }}
       </span>
       <h2 class="sm:text-3xl text-2xl font-semibold text-gray-800 mb-3">
