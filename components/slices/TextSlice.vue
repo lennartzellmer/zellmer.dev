@@ -1,5 +1,5 @@
 <template>
-  <prismic-rich-text class="textslice" :field="slice.primary.text" />
+  <prismic-rich-text class="my-8" :field="slice.primary.text" />
 </template>
 
 <script>

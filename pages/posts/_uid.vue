@@ -15,10 +15,7 @@
     <h1 class="col-span-12 md:col-span-8 pt-10 text-6xl font-semibold">
       {{ $prismic.asText(post.data.headline) }}
     </h1>
-    <SlicesBlock class="col-span-12" :slices="post.data.body" />
-    <pre class="col-span-8">
-      {{ post }}
-    </pre>
+    <SlicesBlock class="col-span-12 md:col-span-8" :slices="post.data.body" />
     <aside class="hidden col-span-3 col-start-10 space-y-4 border-l pl-6 pt-6">
       <nav>
         <span class="text-lg uppercase font-bold text-gray-400">Inhalt</span>
@@ -37,7 +34,7 @@
 
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api'
-import SlicesBlock from '@/slices/SlicesBlock.vue'
+import SlicesBlock from '@/components/slices/SlicesBlock.vue'
 
 export default defineComponent({
   components: { SlicesBlock },
@@ -49,12 +46,6 @@ export default defineComponent({
     } else {
       error({ statusCode: 404, message: 'Page not found' })
     }
-  },
-  methods: {
-    resolveSlice({ sliceName }) {
-      console.log(sliceName)
-      return this.slices[sliceName]
-    },
   },
 })
 </script>

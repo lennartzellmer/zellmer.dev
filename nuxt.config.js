@@ -25,7 +25,7 @@ export default {
   prismic: {
     endpoint: 'https://zellmer-dev.cdn.prismic.io/api/v2',
     modern: true,
-    // see documentation for more!
+    preview: false,
   },
 
   image: {
@@ -49,6 +49,7 @@ export default {
     '@nuxtjs/composition-api/module',
     '@nuxtjs/prismic',
     '@nuxt/image',
+    'nuxt-animejs',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

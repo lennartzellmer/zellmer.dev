@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import TextSlice from '@/slices/TextSlice'
-import ImageSlice from '@/slices/ImageSlice'
+import TextSlice from '@/components/slices/TextSlice.vue'
+import ImageSlice from '@/components/slices/ImageSlice.vue'
 
 export default {
   name: 'SlicesBlock',
