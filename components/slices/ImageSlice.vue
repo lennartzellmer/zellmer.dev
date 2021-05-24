@@ -2,10 +2,17 @@
   <div
     class="grid-cols-2 md:grid-cols-3 lg:grid-cols-4 grid gap-4 lg:gap-6 py-8"
   >
-    <div
+    <button
       v-for="(image, i) in images"
       :key="i"
-      class="col-span-1 rounded-lg overflow-hidden"
+      class="
+        col-span-1
+        rounded-lg
+        focus:outline-none
+        focus:ring
+        ring-gray-400
+        overflow-hidden
+      "
       @click="index = i"
     >
       <NuxtPicture
@@ -15,7 +22,7 @@
         height="1000"
         fit="crop"
       />
-    </div>
+    </button>
     <client-only placeholder="Loading...">
       <AppGalery
         v-if="index !== null"

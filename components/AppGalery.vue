@@ -27,17 +27,22 @@
       <button
         type="button"
         class="
-          text-white
+          text-gray-400
           absolute
           w-12
           h-12
-          top-4
-          right-4
+          top-2
+          right-2
+          opacity-0
           bg-gray-800
-          rounded-full
+          rounded-md
           p-2
           z-[999]
           focus:outline-none
+          hover:transform
+          hover:scale-110
+          hover:text-green-400
+          gallery__navigation_button
         "
         @click="close"
       >
@@ -62,21 +67,26 @@
         v-if="isMultiple"
         type="button"
         class="
+          gallery__navigation_button
           absolute
           bottom-4
           sm:bottom-1/2
           transform
+          opacity-0
           sm:translate-y-1/2
           w-12
           h-12
           bg-gray-800
-          rounded-full
+          rounded-md
           p-2
-          left-4
+          left-2
+          hover:left-1.5
           z-[999]
+          transition-all
           cursor-pointer
-          text-white
+          text-gray-400
           focus:outline-none
+          hover:text-green-400
         "
         @click.stop="onPrev"
       >
@@ -102,7 +112,6 @@
         class="
           w-full
           h-full
-          sm:h-2/3
           md:max-w-7xl
           max-w-full
           bg-black
@@ -125,6 +134,7 @@
         v-if="isMultiple"
         type="button"
         class="
+          gallery__navigation_button
           absolute
           bottom-4
           sm:bottom-1/2
@@ -133,12 +143,16 @@
           w-12
           h-12
           bg-gray-800
-          rounded-full
+          rounded-md
+          opacity-0
+          transition-all
+          hover:text-green-400
+          hover:right-1.5
           p-2
-          right-4
+          right-2
           z-[999]
           cursor-pointer
-          text-white
+          text-gray-400
           focus:outline-none
         "
         @click.stop="onNext"
@@ -174,9 +188,12 @@
           whitespace-nowrap
         "
       >
-        <div v-if="images" class="text-white mb-1">
+        <span
+          v-if="images"
+          class="mb-2 text-gray-400 gallery__navigation_index"
+        >
           {{ imgIndex + 1 }} / {{ images.length }}
-        </div>
+        </span>
         <div v-if="images" class="flex justify-start items-stretch space-x-4">
           <button
             v-for="(img, i) in images"
@@ -191,11 +208,11 @@
               opacity-60
               hover:opacity-100
             "
-            :class="{ 'ring ring-green-400 opacity-100': i === imgIndex }"
+            :class="{ 'ring ring-gray-300 opacity-100': i === imgIndex }"
             @click.stop="onClickThumb(img, i)"
           >
             <NuxtImg
-              class="h-20 md:h-40 w-20 md:w-40 object-cover"
+              class="h-20 w-20 object-cover"
               width="300"
               :src="typeof img === 'string' ? img : img.url"
               :alt="typeof img === 'string' ? '' : img.alt"
@@ -262,10 +279,10 @@ export default {
       }
     })
 
-    this.animate()
+    this.animateIn()
   },
   methods: {
-    animate() {
+    animateIn() {
       const anime = this.$anime
 
       const tl = anime.timeline({
@@ -281,24 +298,96 @@ export default {
         easing: 'easeOutQuad',
       })
 
-      tl.add({
-        targets: '.gallery__image_container',
-        opacity: [0, 1],
-        delay: anime.stagger(50),
-        duration: 400,
-        easing: 'easeOutQuad',
+      tl.add(
+        {
+          targets: '.gallery__image_container',
+          opacity: [0, 1],
+          duration: 400,
+          easing: 'easeOutQuad',
+        },
+        '-=200'
+      )
+
+      tl.add(
+        {
+          targets: '.navigation__image__container',
+          scale: [0.9, 1],
+          opacity: [0, 1],
+          delay: anime.stagger(50),
+          duration: 200,
+          easing: 'easeOutQuad',
+        },
+        '-=100'
+      )
+
+      tl.add(
+        {
+          targets: [
+            '.gallery__navigation_button',
+            '.gallery__navigation_index',
+          ],
+          opacity: [0, 1],
+          duration: 200,
+          easing: 'easeOutQuad',
+        },
+        '-=100'
+      )
+    },
+    animateOut() {
+      const anime = this.$anime
+
+      const tl = anime.timeline({
+        easing: 'easeOutExpo',
+        duration: 300,
       })
 
       tl.add({
-        targets: '.navigation__image__container',
-        scale: [0.9, 1],
-        opacity: [0, 1],
-        delay: anime.stagger(50),
-        duration: 400,
+        targets: '.gallery__image_container',
+        opacity: [1, 0],
+        duration: 300,
         easing: 'easeOutQuad',
       })
+
+      tl.add(
+        {
+          targets: '.navigation__image__container',
+          scale: [1, 0.9],
+          opacity: [1, 0],
+          delay: anime.stagger(50),
+          duration: 300,
+          easing: 'easeOutQuad',
+        },
+        '-300'
+      )
+
+      tl.add(
+        {
+          targets: [
+            '.gallery__navigation_button',
+            '.gallery__navigation_index',
+          ],
+          opacity: [1, 0],
+          duration: 200,
+          easing: 'easeOutQuad',
+        },
+        '-300'
+      )
+
+      tl.add(
+        {
+          targets: '.gallery__background',
+          opacity: [1, 0],
+          delay: anime.stagger(50),
+          duration: 400,
+          easing: 'easeOutQuad',
+        },
+        '-300'
+      )
+
+      return tl
     },
-    close() {
+    async close() {
+      await this.animateOut().finished
       const eventData = {
         imgIndex: this.imgIndex,
       }
