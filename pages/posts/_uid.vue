@@ -16,9 +16,9 @@
       {{ $prismic.asText(post.data.headline) }}
     </h1>
     <SlicesBlock class="col-span-12 md:col-span-8" :slices="post.data.body" />
-    <aside class="hidden col-span-3 col-start-10 space-y-4 border-l pl-6 pt-6">
+    <aside class="hidden col-span-3 col-start-10 space-y-4 pl-6 pt-6">
       <nav>
-        <span class="text-lg uppercase font-bold text-gray-400">Inhalt</span>
+        <span class="text-base text-gray-600">Inhalt</span>
         <ol class="space-y-2 text-gray-500 mt-4">
           <li v-for="(headline, index) in []" :key="index" class="block">
             <a class="hover:text-green-400" :href="'#' + headline.id">

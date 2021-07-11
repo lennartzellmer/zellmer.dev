@@ -7,6 +7,7 @@
       rounded-lg
       overflow-hidden
       focus:outline-none
+      cursor-pointer
     "
     :to="'/posts/' + post.uid"
   >
@@ -59,7 +60,7 @@
       <span class="font-mono text-gray-400">
         {{ formatedDate }}
       </span>
-      <h2 class="sm:text-3xl text-2xl font-semibold text-gray-800 mb-3">
+      <h2 class="sm:text-3xl text-2xl font-bold text-gray-800 mb-3">
         {{ $prismic.asText(post.data.headline) }}
       </h2>
       <p

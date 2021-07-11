@@ -41,7 +41,7 @@
           :d="svgPath.path"
         />
       </svg>
-      <span class="font-semibold text-gray-900">zellmer / blog </span>
+      <span class="font-bold text-gray-900">zellmer / blog </span>
     </nuxt-link>
     <div class="py-9 flex items-center">
       <a
