@@ -1,51 +1,80 @@
 <template>
-  <main
-    v-if="post"
-    class="
-      max-w-7xl
-      mx-auto
-      px-4
-      sm:px-6
-      lg:px-8
-      grid-cols-12 grid
-      gap-8
-      auto-rows-max
-    "
-  >
-    <h1 class="col-span-12 md:col-span-8 pt-10 text-6xl font-semibold">
-      {{ $prismic.asText(post.data.headline) }}
-    </h1>
-    <SlicesBlock class="col-span-12 md:col-span-8" :slices="post.data.body" />
-    <aside class="hidden col-span-3 col-start-10 space-y-4 pl-6 pt-6">
-      <nav>
-        <span class="text-base text-gray-600">Inhalt</span>
-        <ol class="space-y-2 text-gray-500 mt-4">
-          <li v-for="(headline, index) in []" :key="index" class="block">
-            <a class="hover:text-green-400" :href="'#' + headline.id">
-              <span class="font-mono text-2xl font-bold">0{{ index + 1 }}</span>
-              {{ headline.text }}
-            </a>
-          </li>
-        </ol>
-      </nav>
-    </aside>
+  <main v-if="state.post" class="bg-slate-2">
+    <section
+      class="
+        auto-rows-max
+        gap-8
+        px-4
+        pb-12
+        mx-auto
+        max-w-6xl
+        sm:px-6
+        lg:px-8
+        grid-cols-12 grid
+      "
+    >
+      <h1 class="col-span-12 pt-10 text-6xl font-semibold md:col-span-8">
+        {{ $prismic.asText(state.post.headline) }}
+      </h1>
+      <SlicesBlock
+        class="col-span-12 md:col-span-9"
+        :slices="state.post.body"
+      />
+      <aside class="hidden col-span-3 col-start-10 pt-6 pl-6 space-y-4">
+        <nav>
+          <span class="text-base text-gray-600">Inhalt</span>
+          <ol class="mt-4 space-y-2 text-gray-500">
+            <li v-for="(headline, index) in []" :key="index" class="block">
+              <a class="hover:text-green-400" :href="'#' + headline.id">
+                <span class="font-mono text-2xl font-bold"
+                  >0{{ index + 1 }}</span
+                >
+                {{ headline.text }}
+              </a>
+            </li>
+          </ol>
+        </nav>
+      </aside>
+    </section>
   </main>
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api'
+import {
+  defineComponent,
+  reactive,
+  useContext,
+  useFetch,
+  useRoute,
+} from '@nuxtjs/composition-api'
 import SlicesBlock from '@/components/slices/SlicesBlock.vue'
 
 export default defineComponent({
   components: { SlicesBlock },
-  async asyncData({ $prismic, params, error }) {
-    const post = await $prismic.api.getByUID('blog-post', params.uid)
+  setup() {
+    const { error, $prismic } = useContext()
+    const route = useRoute()
 
-    if (post) {
-      return { post }
-    } else {
-      error({ statusCode: 404, message: 'Page not found' })
-    }
+    const state = reactive<{ post: { headline: string; body: any } | null }>({
+      post: null,
+    })
+
+    useFetch(async () => {
+      const response = await $prismic.api.getByUID(
+        'blog-post',
+        route.value.params.uid
+      )
+
+      console.log(response)
+
+      state.post = response.data
+
+      if (!state.post) {
+        error({ statusCode: 404, message: 'Page not found' })
+      }
+    })
+
+    return { state }
   },
 })
 </script>

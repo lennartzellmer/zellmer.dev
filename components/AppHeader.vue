@@ -1,18 +1,6 @@
 <template>
   <header class="bg-slate-2">
-    <nav
-      class="
-        flex
-        justify-between
-        px-4
-        mx-auto
-        max-w-6xl
-        bg-slate-2
-        sm:px-6
-        lg:px-8
-        border-b border-gray-100
-      "
-    >
+    <nav class="flex justify-between px-4 mx-auto max-w-6xl sm:px-6 lg:px-8">
       <nuxt-link
         class="
           group
@@ -20,8 +8,9 @@
           justify-center
           items-center
           space-x-3
-          text-2xl
+          text-lg
           focus:outline-none
+          sm:text-2xl
         "
         to="/"
         @click.native="animate"
@@ -33,11 +22,12 @@
           viewBox="0 0 100 100"
           class="
             overflow-visible
-            w-16
+            w-12
             h-auto
             text-gray-900
             group-hover:text-green-400
             transition
+            sm:w-16
           "
         >
           <path
@@ -57,7 +47,8 @@
             transition
             ease-in-out
           "
-          >zellmer.dev
+        >
+          zellmer.dev
         </span>
       </nuxt-link>
       <div class="flex items-center py-9">
@@ -65,13 +56,51 @@
           class="
             flex
             items-center
-            p-3
+            p-1.5
             hover:text-green-400
             focus:bg-gray-100 focus:rounded-full focus:ring-2
             ring-green-300
+            transition
+            transform
+            hover:-rotate-6 hover:scale-105
             focus:outline-none
+            sm:p-2.5
           "
-          href=""
+          href="mailto:lennart+blog@zellmer.dev"
+          subject="Hej,%20what's%20up?"
+          target="_blank"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5 "
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="w-7 h-auto feather feather-at-sign"
+          >
+            <circle cx="12" cy="12" r="4" />
+            <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94" />
+          </svg>
+        </a>
+        <a
+          class="
+            flex
+            items-center
+            p-1.5
+            hover:text-green-400
+            focus:bg-gray-100 focus:rounded-full focus:ring-2
+            ring-green-300
+            transition
+            transform
+            hover:rotate-6 hover:scale-105
+            focus:outline-none
+            sm:p-2.5
+          "
+          href="https://github.com/lennartzellmer"
           target="_blank"
         >
           <svg
@@ -95,14 +124,18 @@
           class="
             flex
             items-center
-            p-3
+            p-1.5
             h-full
             hover:text-green-400
             focus:bg-gray-100 focus:rounded-full focus:ring-2
             ring-green-300
+            transition
+            transform
+            hover:scale-105 hover:-rotate-6
             focus:outline-none
+            sm:p-2.5
           "
-          href=""
+          href="https://twitter.com/ZuTeilen"
           target="_blank"
         >
           <svg

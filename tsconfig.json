@@ -16,6 +16,7 @@
       "@/*": ["./*"],
       "~/*": ["./*"]
     },
+    "include": ["types/**/*.ts"],
     "types": [
       "@types/node",
       "@nuxt/types",

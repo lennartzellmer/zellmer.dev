@@ -4,18 +4,18 @@
     class="
       inline-flex
       items-center
-      px-4
       py-2
-      border border-transparent
+      px-4
       text-sm
       font-medium
-      rounded-md
-      shadow-sm
       text-white
       bg-green-500
       hover:bg-blue-700
-      focus:outline-none
+      rounded-md
       focus:ring-2 focus:ring-offset-2 focus:ring-blue-500
+      shadow-sm
+      focus:outline-none
+      border border-transparent
     "
   >
     <slot />
