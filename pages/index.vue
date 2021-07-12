@@ -94,7 +94,7 @@ export default defineComponent({
     @apply text-slate-6 font-bold text-3xl mb-3;
   }
   p {
-    @apply text-slate-10 leading-relaxed;
+    @apply text-slate-10 leading-relaxed pb-6;
   }
   a {
     @apply text-slate-8 underline hover:text-slate-5 leading-relaxed font-mono;

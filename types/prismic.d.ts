@@ -43,7 +43,7 @@ interface RichText {
     serializer?: HTMLSerializer<string>
   ): string
   asText(richText: any, joinString?: string): string
-  asLink(link: any, linkResolver: (doc: any) => string): string
+  asLink(link: any, linkResolver?: (doc: any) => string): string
 }
 
 interface Link {
@@ -57,6 +57,7 @@ interface VuePrismic {
   client: DefaultClient
   richTextAsPlain: (field: string) => string
   predicates: typeof Predicates
+  asLink(link: any, linkResolver?: (doc: any) => string): string
 }
 
 type PrismicVue<T> = VuePrismic & T
@@ -77,6 +78,7 @@ declare module '@nuxt/types' {
 }
 
 declare module 'vuex/types/index' {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   interface Store<S> {
     $prismic: PrismicVue<PrismicAPI>
   }

@@ -13,6 +13,8 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
+  target: 'static',
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 
@@ -50,6 +52,7 @@ export default {
     '@nuxtjs/prismic',
     '@nuxt/image',
     'nuxt-animejs',
+    '@nuxt/typescript-build',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

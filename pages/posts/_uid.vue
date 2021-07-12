@@ -13,7 +13,9 @@
         grid-cols-12 grid
       "
     >
-      <h1 class="col-span-12 pt-10 text-6xl font-semibold md:col-span-8">
+      <h1
+        class="col-span-12 pt-10 text-6xl font-bold leading-tight md:col-span-8"
+      >
         {{ $prismic.asText(state.post.headline) }}
       </h1>
       <SlicesBlock

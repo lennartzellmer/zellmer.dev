@@ -1,11 +1,19 @@
 <template>
-  <nuxt-link :to="$prismic.asLink(link.link)">
-    {{ link.label[0].text }}
+  <nuxt-link v-if="linkType === 'Document'" :to="destination">
+    {{ text }}
   </nuxt-link>
+  <a v-else :href="destination">
+    {{ text }}
+  </a>
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from '@nuxtjs/composition-api'
+import {
+  computed,
+  defineComponent,
+  PropType,
+  useContext,
+} from '@nuxtjs/composition-api'
 
 interface FooterLink {
   label: [
@@ -34,6 +42,26 @@ export default defineComponent({
       type: Object as PropType<FooterLink>,
       required: true,
     },
+  },
+  setup({ link }) {
+    const { $prismic } = useContext()
+
+    const linkType = computed(() => {
+      if (link.link.link_type === 'Document') {
+        return 'nuxt-link'
+      }
+      return 'a'
+    })
+
+    const destination = computed(() => {
+      return $prismic.asLink(link.link)
+    })
+
+    const text = computed(() => {
+      return link.label[0].text
+    })
+
+    return { linkType, destination, text }
   },
 })
 </script>

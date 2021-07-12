@@ -13,7 +13,7 @@
         lg:px-8
       "
     >
-      <article class="col-span-7 prismic-text">
+      <article class="col-span-7 pb-12 prismic-text">
         <prismic-rich-text class="my-8" :field="page.title" />
         <prismic-rich-text class="my-8" :field="page.text" />
       </article>

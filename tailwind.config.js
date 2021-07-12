@@ -11,6 +11,19 @@ module.exports = {
       mono: ['JetBrains Mono', ...defaultTheme.fontFamily.mono],
     },
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            a: {
+              color: '#11181c',
+              fontFamily: ['JetBrains Mono', ...defaultTheme.fontFamily.mono],
+              '&:hover': {
+                color: '#687076',
+              },
+            },
+          },
+        },
+      },
       colors: {
         gray: colors.warmGray,
         green: colors.green,
@@ -39,20 +52,6 @@ module.exports = {
           10: '#7e868c',
           11: '#687076',
           12: '#11181c',
-        },
-        sand: {
-          1: '#fdfdfc',
-          2: '#f9f9f8',
-          3: '#f3f3f2',
-          4: '#eeeeec',
-          5: '#e9e9e6',
-          6: '#e3e3e0',
-          7: '#dbdbd7',
-          8: '#c8c7c1',
-          9: '#90908c',
-          10: '#868682',
-          11: '#706f6c',
-          12: '#1b1b18',
         },
         action: {
           red: '#F34616',

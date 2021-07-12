@@ -1,17 +1,19 @@
 <template>
   <div
-    class="grid-cols-2 md:grid-cols-3 lg:grid-cols-4 grid gap-4 lg:gap-6 py-8"
+    class="grid grid-cols-2 gap-4 py-8 md:grid-cols-3 lg:grid-cols-4 lg:gap-6"
   >
     <button
       v-for="(image, i) in images"
       :key="i"
       class="
+        overflow-hidden
         col-span-1
         rounded-lg
-        focus:outline-none
+        hover:ring-2
         focus:ring
-        ring-gray-400
-        overflow-hidden
+        ring-slate-7
+        transition
+        focus:outline-none
       "
       @click="index = i"
     >
@@ -28,6 +30,7 @@
         v-if="index !== null"
         :images="images"
         :index="index"
+        class="transform-gpu"
         @close="index = null"
       />
     </client-only>

@@ -16,13 +16,12 @@
       "@/*": ["./*"],
       "~/*": ["./*"]
     },
-    "include": ["types/**/*.ts"],
     "types": [
       "@types/node",
       "@nuxt/types",
       "@nuxt/vue-app",
       "@nuxt/content",
-      "webpack-env",
+      "webpack-env"
     ]
   },
   "exclude": ["node_modules", ".nuxt", "dist"]

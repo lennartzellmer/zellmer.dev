@@ -3,22 +3,21 @@
     <div
       class="
         absolute
+        fixed
         inset-0
-        flex flex-col
+        justify-center
         items-center
         px-0
-        sm:px-8
-        sm:py-8
-        justify-center
-        fixed
+        sm:py-8 sm:px-8
+        flex flex-col
         z-[9998]
       "
       @click="close"
     >
       <span
         class="
-          inset-0
           absolute
+          inset-0
           bg-gray-900 bg-opacity-95
           z-[997]
           gallery__background
@@ -27,21 +26,20 @@
       <button
         type="button"
         class="
-          text-gray-400
           absolute
-          w-12
-          h-12
           top-2
           right-2
-          opacity-0
+          p-2
+          w-12
+          h-12
+          text-gray-400
+          hover:text-green-400
           bg-gray-800
           rounded-md
-          p-2
-          z-[999]
+          opacity-0
+          hover:transform hover:scale-110
           focus:outline-none
-          hover:transform
-          hover:scale-110
-          hover:text-green-400
+          z-[999]
           gallery__navigation_button
         "
         @click="close"
@@ -67,26 +65,25 @@
         v-if="isMultiple"
         type="button"
         class="
-          gallery__navigation_button
           absolute
           bottom-4
-          sm:bottom-1/2
-          transform
-          opacity-0
-          sm:translate-y-1/2
-          w-12
-          h-12
-          bg-gray-800
-          rounded-md
-          p-2
           left-2
           hover:left-1.5
-          z-[999]
-          transition-all
-          cursor-pointer
+          p-2
+          w-12
+          h-12
           text-gray-400
-          focus:outline-none
           hover:text-green-400
+          bg-gray-800
+          rounded-md
+          opacity-0
+          transition-all
+          transform
+          cursor-pointer
+          focus:outline-none
+          sm:bottom-1/2 sm:translate-y-1/2
+          gallery__navigation_button
+          z-[999]
         "
         @click.stop="onPrev"
       >
@@ -110,20 +107,20 @@
       <div
         v-if="images"
         class="
+          overflow-x-hidden
           w-full
-          h-full
-          md:max-w-7xl
           max-w-full
+          h-full
           bg-black
           sm:rounded-lg
+          md:max-w-7xl
           z-[998]
-          overflow-x-hidden
           gallery__image_container
         "
         @click.stop="onNext"
       >
         <NuxtImg
-          class="w-full h-full object-contain"
+          class="object-contain w-full h-full"
           width="2300"
           :src="imageUrl"
           :alt="alt"
@@ -134,26 +131,25 @@
         v-if="isMultiple"
         type="button"
         class="
-          gallery__navigation_button
           absolute
+          right-2
+          hover:right-1.5
           bottom-4
-          sm:bottom-1/2
-          transform
-          sm:translate-y-1/2
+          p-2
           w-12
           h-12
+          text-gray-400
+          hover:text-green-400
           bg-gray-800
           rounded-md
           opacity-0
           transition-all
-          hover:text-green-400
-          hover:right-1.5
-          p-2
-          right-2
-          z-[999]
+          transform
           cursor-pointer
-          text-gray-400
           focus:outline-none
+          sm:bottom-1/2 sm:translate-y-1/2
+          gallery__navigation_button
+          z-[999]
         "
         @click.stop="onNext"
       >
@@ -179,13 +175,12 @@
         ref="gallery"
         class="
           hidden
-          sm:justify-center
-          sm:flex sm:flex-col
-          max-w-7xl
-          w-full
           mt-4
-          z-[999]
+          w-full
+          max-w-7xl
           whitespace-nowrap
+          sm:flex sm:flex-col sm:justify-center
+          z-[999]
         "
       >
         <span
@@ -199,20 +194,20 @@
             v-for="(img, i) in images"
             :key="i"
             class="
+              overflow-hidden
+              rounded-md
+              opacity-60
+              hover:opacity-100
+              cursor-pointer
               focus:outline-none
               flex-shrink flex-grow-0
               navigation__image__container
-              rounded-md
-              overflow-hidden
-              cursor-pointer
-              opacity-60
-              hover:opacity-100
             "
             :class="{ 'ring ring-gray-300 opacity-100': i === imgIndex }"
             @click.stop="onClickThumb(img, i)"
           >
             <NuxtImg
-              class="h-20 w-20 object-cover"
+              class="object-cover w-20 h-20"
               width="300"
               :src="typeof img === 'string' ? img : img.url"
               :alt="typeof img === 'string' ? '' : img.alt"
