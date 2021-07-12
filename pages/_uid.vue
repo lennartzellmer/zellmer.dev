@@ -42,7 +42,6 @@ export default defineComponent({
         'default_page',
         route.value.params.uid
       )
-      console.log(response)
       page.value = response.data
     })
 

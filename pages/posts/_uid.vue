@@ -39,6 +39,7 @@
       </aside>
     </section>
   </main>
+  </main>
 </template>
 
 <script lang="ts">
@@ -66,8 +67,6 @@ export default defineComponent({
         'blog-post',
         route.value.params.uid
       )
-
-      console.log(response)
 
       state.post = response.data
 
