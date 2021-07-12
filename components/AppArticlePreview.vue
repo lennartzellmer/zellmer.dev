@@ -1,34 +1,32 @@
 <template>
   <NuxtLink
     class="
-      flex flex-col
-      sm:flex-row
       group
-      rounded-lg
       overflow-hidden
-      focus:outline-none
+      rounded-lg
       cursor-pointer
+      focus:outline-none
+      sm:flex-row
+      flex flex-col
     "
     :to="'/posts/' + post.uid"
   >
     <div
       class="
+        overflow-hidden
+        relative
+        z-20
         flex-shrink-0
         w-full
         h-36
-        sm:h-auto
-        sm:w-48
-        relative
-        rounded-lg
-        overflow-hidden
         bg-gray-400
+        rounded-lg
         transition-all
-        sm:group-hover:w-52 sm:group-focus:w-52
-        z-20
+        sm:h-auto sm:w-48 sm:group-hover:w-52 sm:group-focus:w-52
       "
     >
       <nuxt-img
-        class="inset-0 object-cover object-center h-full w-full absolute z-10"
+        class="object-cover object-center absolute inset-0 z-10 w-full h-full"
         :src="post.data.thumbnail.url"
         alt="article illustration"
         width="800"
@@ -38,37 +36,36 @@
     </div>
     <article
       class="
-        mt-6
-        sm:pl-8
         z-10
-        sm:pr-10
-        sm:group-hover:bg-gray-100
-        sm:py-8
-        sm:mt-3
+        mt-6
         mb-3
         w-full
         rounded-r-lg
-        transform
         transition-all
-        sm:group-hover:pl-8
+        transform
+        sm:py-8
+        sm:pr-10
         sm:group-hover:pr-6
-        sm:group-focus:pl-8
         sm:group-focus:pr-6
+        sm:pl-8
+        sm:group-hover:pl-8
+        sm:group-focus:pl-8
+        sm:mt-3
+        sm:group-hover:bg-slate-3
         sm:group-focus:bg-gray-100
       "
     >
-      <span class="font-mono text-gray-400">
+      <span class="font-mono text-sm text-slate-9">
         {{ formatedDate }}
       </span>
-      <h2 class="sm:text-3xl text-2xl font-bold text-gray-800 mb-3">
+      <h2 class="mb-3 text-2xl font-bold text-slate-12 sm:text-2xl">
         {{ $prismic.asText(post.data.headline) }}
       </h2>
       <p
         class="
           text-base
-          sm:text-lg
           leading-7
-          text-gray-700
+          text-slate-11
           overflow-ellipsis overflow-hidden
         "
       >

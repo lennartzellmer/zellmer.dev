@@ -1,6 +1,7 @@
 <template>
   <div>
-    <AppHeader />
-    <Nuxt />
+    <AppHeader class="bg-slate-2" />
+    <Nuxt class="bg-slate-2" />
+    <AppFooter />
   </div>
 </template>

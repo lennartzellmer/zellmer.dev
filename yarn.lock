@@ -5131,6 +5131,15 @@ eslint-plugin-standard@^4.1.0:
   resolved "https://registry.yarnpkg.com/eslint-plugin-standard/-/eslint-plugin-standard-4.1.0.tgz#0c3bf3a67e853f8bbbc580fb4945fbf16f41b7c5"
   integrity sha512-ZL7+QRixjTR6/528YNGyDotyffm5OQst/sGxKDwGb9Uqs4In5Egi4+jbobhqJoyoCM6/7v/1A5fhQ7ScMtDjaQ==
 
+eslint-plugin-tailwindcss@^1.13.4:
+  version "1.13.4"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-tailwindcss/-/eslint-plugin-tailwindcss-1.13.4.tgz#a728925ce6fe86678d7e89f6d0a9f6e4bbe57ecf"
+  integrity sha512-xdoCszOpLNpQv1hXtA04lIVvbFPn3kP1Ky9Oa7NLzjAK5iqtDNpVAhDC8rruNyB2JNwxfQQ+nrsIYK+1MetXHA==
+  dependencies:
+    fast-glob "^3.2.5"
+    postcss "^8.3.0"
+    tailwindcss "^2.1.2"
+
 eslint-plugin-unicorn@^28.0.2:
   version "28.0.2"
   resolved "https://registry.yarnpkg.com/eslint-plugin-unicorn/-/eslint-plugin-unicorn-28.0.2.tgz#ab9884ebae04590ecd9c1c294330d889a74b7c37"
@@ -9196,7 +9205,7 @@ postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.17, postcss@^7.0.2
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-postcss@^8.1.10, postcss@^8.2.15:
+postcss@^8.1.10, postcss@^8.2.15, postcss@^8.3.0:
   version "8.3.5"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.3.5.tgz#982216b113412bc20a86289e91eb994952a5b709"
   integrity sha512-NxTuJocUhYGsMiMFHDUkmjSKT3EdH4/WbGF6GCi1NDGk+vbcUTun4fpbOqaPtD8IIsztA2ilZm2DhYCuyN58gA==

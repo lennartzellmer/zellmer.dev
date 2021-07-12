@@ -10,8 +10,9 @@ module.exports = {
     'plugin:nuxt/recommended',
     'plugin:vue/recommended',
     'plugin:prettier-vue/recommended',
+    'plugin:tailwindcss/recommended',
   ],
-  plugins: ['prettier'],
+  plugins: ['prettier', 'tailwindcss'],
   rules: {
     'vue/html-self-closing': [
       'error',
@@ -31,6 +32,9 @@ module.exports = {
     'vue-i18n': {
       localeDir: './locales/de-DE.json',
       messageSyntaxVersion: '^8.23.0',
+    },
+    tailwindcss: {
+      groupByResponsive: true,
     },
   },
 }

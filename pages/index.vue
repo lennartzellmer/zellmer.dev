@@ -1,65 +1,59 @@
 <template>
   <main>
     <section
-      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:grid grid-cols-12 gap-8"
+      class="grid-cols-12 gap-8 px-4 mx-auto max-w-5xl sm:grid sm:px-6 lg:px-8"
     >
-      <ul
-        class="col-span-12 sm:col-span-9 sm:col-start-2 mt-24 space-y-12 mb-12"
-      >
+      <ul class="col-span-12 mt-24 mb-12 space-y-12">
         <li v-for="post in posts" :key="post.id">
           <AppArticlePreview :post="post" />
         </li>
       </ul>
     </section>
 
-    <div
-      class="mt-24 min-h-screen overflow-hidden relative py-24 bg-primary-900"
+    <svg
+      class="w-full h-auto text-slate-12"
+      viewBox="0 0 1440 166"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <section
-        v-if="bio"
-        class="
-          max-w-7xl
-          mx-auto
-          px-4
-          sm:px-6
-          lg:px-8
-          sm:grid
-          grid-cols-12
-          gap-8
-        "
-      >
-        <div class="absolute rounded-xl z-0">
-          <nuxt-img
-            v-if="bio"
-            class="object-cover h-full w-auto"
-            :src="bio.data.profile_image.url"
-            alt="article illustration"
-            width="800"
-            height="800"
-            fit="crop"
-          />
-        </div>
-        <div class="col-span-4 col-start-7 flex z-10">
+      <path
+        d="M1440 166.709C883.5 150 262.088 58.4152 0 0V166.709H1440Z"
+        fill="currentColor"
+      />
+    </svg>
+    <section class="pb-24 bg-slate-12">
+      <div v-if="bio" class="grid grid-cols-12 gap-8 mx-auto max-w-5xl">
+        <nuxt-img
+          v-if="bio"
+          class="
+            object-contain
+            overflow-hidden
+            col-span-5
+            h-auto
+            bg-black
+            opacity-100
+            mix-blend-lighten
+            filter
+            brightness-105
+          "
+          :src="bio.data.profile_image.url"
+          alt="article illustration"
+          width="800"
+          height="800"
+          fit="crop"
+        />
+
+        <div class="flex col-span-7 items-center">
           <div class="prismic-text">
             <prismic-rich-text class="p-8" :field="bio.data.bio_text" />
-            <div class="flex flex-col space-y-3 bg-primary-800 p-8">
-              <dl class="flex space-x-2 text-primary-500 uppercase">
-                <dt>Heading for:</dt>
-                <dd class="text-primary-300">Bonn</dd>
-              </dl>
-              <dl class="flex space-x-2 text-primary-500 uppercase">
-                <dt>Currently learning:</dt>
-                <dd class="text-primary-300">Stripe API and Custom Checkout</dd>
-              </dl>
-            </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   </main>
 </template>
 
-<script>
+<script lang="ts">
 import {
   defineComponent,
   ref,
@@ -96,12 +90,15 @@ export default defineComponent({
 
 <style lang="scss">
 .prismic-text {
-  @apply bg-primary-900 rounded-lg overflow-hidden;
+  @apply rounded-lg overflow-hidden;
   h3 {
-    @apply text-primary-300 font-semibold text-3xl mb-3;
+    @apply text-slate-6 font-bold text-3xl mb-3;
   }
   p {
-    @apply text-primary-500 text-lg leading-relaxed;
+    @apply text-slate-10 leading-relaxed;
+  }
+  a {
+    @apply text-slate-8 underline hover:text-slate-5 leading-relaxed;
   }
 }
 </style>
