@@ -26,11 +26,10 @@
       />
     </button>
     <client-only placeholder="Loading...">
-      <AppGalery
+      <AppGallery
         v-if="index !== null"
         :images="images"
         :index="index"
-        class="transform-gpu"
         @close="index = null"
       />
     </client-only>
@@ -57,5 +56,3 @@ export default {
   },
 }
 </script>
-
-<style scoped></style>
