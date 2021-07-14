@@ -2,7 +2,6 @@
   <transition name="modal">
     <div
       class="
-        absolute
         fixed
         inset-0
         justify-center
@@ -107,6 +106,7 @@
       <div
         v-if="images"
         class="
+          flex
           overflow-x-hidden
           w-full
           max-w-full
@@ -119,8 +119,8 @@
         "
         @click.stop="onNext"
       >
-        <NuxtImg
-          class="object-contain w-full h-full"
+        <NuxtPicture
+          class="flex w-full h-auto gallery__nuxt_picture"
           width="2300"
           :src="imageUrl"
           :alt="alt"
@@ -185,7 +185,7 @@
       >
         <span
           v-if="images"
-          class="mb-2 text-gray-400 gallery__navigation_index"
+          class="mb-2 font-mono text-gray-400 gallery__navigation_index"
         >
           {{ imgIndex + 1 }} / {{ images.length }}
         </span>
@@ -194,7 +194,10 @@
             v-for="(img, i) in images"
             :key="i"
             class="
+              object-cover
               overflow-hidden
+              w-20
+              h-20
               rounded-md
               opacity-60
               hover:opacity-100
@@ -206,9 +209,10 @@
             :class="{ 'ring ring-gray-300 opacity-100': i === imgIndex }"
             @click.stop="onClickThumb(img, i)"
           >
-            <NuxtImg
-              class="object-cover w-20 h-20"
+            <NuxtPicture
               width="300"
+              height="300"
+              fit="crop"
               :src="typeof img === 'string' ? img : img.url"
               :alt="typeof img === 'string' ? '' : img.alt"
             />
@@ -411,3 +415,11 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.gallery__nuxt_picture {
+  img {
+    @apply object-contain;
+  }
+}
+</style>
