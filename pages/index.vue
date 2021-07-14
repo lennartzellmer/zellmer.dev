@@ -8,28 +8,28 @@
       </ul>
     </section>
 
-    <svg
-      class="w-full h-auto text-slate-12 bg-slate-2"
-      viewBox="0 0 1440 166"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M1440 166.709C883.5 150 262.088 58.4152 0 0V166.709H1440Z"
-        fill="currentColor"
-      />
-    </svg>
-    <section class="bg-slate-12 sm:pb-24">
-      <div
-        v-if="bio"
-        class="mx-auto max-w-5xl sm:grid sm:grid-cols-12 sm:gap-8"
+    <div class="pt-12 bg-slate-2">
+      <svg
+        class="w-full h-16 text-slate-12 md:h-24 lg:h-32"
+        viewBox="0 0 1440 166"
+        preserveAspectRatio="none"
+        height="1440"
+        width="166"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <div class="flex pr-8 pl-8 w-full sm:col-span-5 sm:pr-0">
-          <nuxt-img
+        <path
+          d="M1440 166.709C883.5 150 262.088 58.4152 0 0V166.709H1440Z"
+          fill="currentColor"
+        />
+      </svg>
+    </div>
+    <section class="bg-slate-12 sm:pb-24 md:px-4">
+      <div v-if="bio" class="grid grid-cols-12 mx-auto max-w-5xl md:gap-8">
+        <div class="flex col-span-10 col-start-2 md:col-span-5 md:col-start-1">
+          <NuxtPicture
             class="
               object-contain
-              w-full
-              h-auto
               opacity-100
               mix-blend-lighten
               filter
@@ -43,9 +43,17 @@
           />
         </div>
 
-        <div class="flex col-span-7 items-center">
+        <div
+          class="
+            flex
+            items-center
+            mt-8
+            md:col-start-auto md:col-span-7
+            col-span-10 col-start-2
+          "
+        >
           <div class="prismic-text-dark">
-            <prismic-rich-text class="p-8" :field="bio.data.bio_text" />
+            <prismic-rich-text :field="bio.data.bio_text" />
           </div>
         </div>
       </div>

@@ -30,14 +30,16 @@
             sm:w-16
           "
         >
-          <path
-            id="blob"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="4"
-            :d="svgPath.path"
-          />
+          <client-only>
+            <path
+              id="blob"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="4"
+              :d="svgPath.path"
+            />
+          </client-only>
         </svg>
         <span
           class="

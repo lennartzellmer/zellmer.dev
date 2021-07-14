@@ -7,14 +7,22 @@
         px-4
         pb-12
         mx-auto
+        w-full
         max-w-6xl
-        sm:px-6
+        sm:grid-cols-12 sm:grid sm:px-6
         lg:px-8
-        grid-cols-12 grid
       "
     >
       <h1
-        class="col-span-12 pt-10 text-6xl font-bold leading-tight md:col-span-8"
+        class="
+          col-span-12
+          pt-10
+          text-4xl
+          font-bold
+          leading-tight
+          sm:text-6xl
+          md:col-span-8
+        "
       >
         {{ $prismic.asText(state.post.headline) }}
       </h1>
@@ -39,7 +47,6 @@
       </aside>
     </section>
   </main>
-  </main>
 </template>
 
 <script lang="ts">
@@ -54,6 +61,7 @@ import SlicesBlock from '@/components/slices/SlicesBlock.vue'
 
 export default defineComponent({
   components: { SlicesBlock },
+  layout: 'post',
   setup() {
     const { error, $prismic } = useContext()
     const route = useRoute()
