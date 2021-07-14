@@ -2,15 +2,13 @@
   <main v-if="state.post" class="bg-slate-2">
     <section
       class="
-        auto-rows-max
         gap-8
         px-4
         pb-12
         mx-auto
         w-full
         max-w-6xl
-        sm:grid-cols-12 sm:grid sm:px-6
-        lg:px-8
+        md:auto-rows-max md:grid-cols-12 md:grid md:px-6
       "
     >
       <h1
@@ -21,13 +19,14 @@
           font-bold
           leading-tight
           sm:text-6xl
-          md:col-span-8
+          md:col-span-10
+          lg:col-span-8
         "
       >
         {{ $prismic.asText(state.post.headline) }}
       </h1>
       <SlicesBlock
-        class="col-span-12 md:col-span-9"
+        class="col-span-12 md:col-span-10 lg:col-span-8"
         :slices="state.post.body"
       />
       <aside class="hidden col-span-3 col-start-10 pt-6 pl-6 space-y-4">

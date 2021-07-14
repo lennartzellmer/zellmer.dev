@@ -2,9 +2,9 @@
   <div class="flex flex-col min-h-screen bg-slate-12">
     <AppHeader class="bg-slate-2" />
     <Nuxt class="flex-grow" />
-    <div>
+    <div class="pt-12 bg-slate-2">
       <svg
-        class="w-full h-24 text-slate-12 bg-slate-2"
+        class="w-full h-16 text-slate-12 md:h-24 lg:h-32"
         viewBox="0 0 1440 166"
         preserveAspectRatio="none"
         height="1440"

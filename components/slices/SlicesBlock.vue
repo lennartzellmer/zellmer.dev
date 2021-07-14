@@ -4,7 +4,7 @@
       <template v-if="slice.slice_type === 'text'">
         <TextSlice
           :key="'slice-' + index"
-          class="prose prose-lg"
+          class="max-w-none prose prose-lg"
           :slice="slice"
         />
       </template>
