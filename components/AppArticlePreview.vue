@@ -55,7 +55,7 @@
         sm:group-focus:bg-gray-100
       "
     >
-      <span class="font-mono text-sm text-slate-9">
+      <span class="font-mono text-sm text-slate-11">
         {{ formatedDate }}
       </span>
       <h2 class="mb-3 text-2xl font-bold text-slate-12 sm:text-2xl">
