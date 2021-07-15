@@ -60,6 +60,15 @@ export default {
     },
   },
 
+  fontLoader: {
+    // Paste a google link here
+    url: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@200;300;400;500;600;700;800&display=swap',
+
+    // Enable options
+    prefetch: true,
+    preconnect: true,
+  },
+
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     'nuxt-vite',
@@ -69,6 +78,7 @@ export default {
     '@nuxt/image',
     'nuxt-animejs',
     '@nuxt/typescript-build',
+    'nuxt-font-loader',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
