@@ -13,6 +13,7 @@
   >
     <div
       class="
+        flex
         overflow-hidden
         relative
         z-20
@@ -25,12 +26,12 @@
         sm:h-auto sm:w-48 sm:group-hover:w-52 sm:group-focus:w-52
       "
     >
-      <nuxt-img
-        class="object-cover object-center absolute inset-0 z-10 w-full h-full"
+      <NuxtPicture
+        class="AppArticlePreview__picture"
         :src="post.data.thumbnail.url"
         alt="article illustration"
-        width="800"
-        height="800"
+        width="400"
+        height="400"
         fit="crop"
       />
     </div>
@@ -96,3 +97,12 @@ export default defineComponent({
   },
 })
 </script>
+
+<style lang="scss">
+.AppArticlePreview__picture {
+  @apply flex;
+  img {
+    @apply object-cover;
+  }
+}
+</style>
