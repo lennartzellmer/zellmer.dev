@@ -10,7 +10,15 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+      { rel: 'alternate icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'mask-icon',
+        color: '#5bbad5',
+        href: '/safari-pinned-tab.svg',
+      },
+    ],
   },
 
   target: 'static',
