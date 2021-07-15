@@ -33,6 +33,7 @@
         width="400"
         height="400"
         fit="crop"
+        sizes="xs:400px sm:600px md:400px lg:400px xl:400px xxl:400px 2xl:400px"
       />
     </div>
     <article

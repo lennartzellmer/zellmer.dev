@@ -40,6 +40,7 @@
             width="800"
             height="800"
             fit="crop"
+            sizes="xs:400px sm:600px md:400px lg:800px xl:800px xxl:800px 2xl:800px"
           />
         </div>
 
