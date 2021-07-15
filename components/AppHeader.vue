@@ -104,6 +104,7 @@
           "
           href="https://github.com/lennartzellmer"
           target="_blank"
+          rel="noreferrer"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -139,6 +140,7 @@
           "
           href="https://twitter.com/ZuTeilen"
           target="_blank"
+          rel="noreferrer"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
