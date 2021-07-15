@@ -72,6 +72,7 @@
           subject="Hej,%20what's%20up?"
           target="_blank"
         >
+          <span class="sr-only">Write me an email</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -106,6 +107,7 @@
           target="_blank"
           rel="noreferrer"
         >
+          <span class="sr-only">Go to my GitHub profile</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -142,6 +144,7 @@
           target="_blank"
           rel="noreferrer"
         >
+          <span class="sr-only">Go to my twitter profile</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
