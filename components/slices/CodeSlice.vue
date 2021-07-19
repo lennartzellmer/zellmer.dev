@@ -31,7 +31,6 @@ export default defineComponent({
   setup() {
     onMounted(() => {
       window.Prism = window.Prism || {}
-      window.Prism.manual = true
       Prism.highlightAll() // highlight your code on mount
     })
   },

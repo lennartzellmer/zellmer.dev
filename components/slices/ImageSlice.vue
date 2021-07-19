@@ -54,8 +54,8 @@ export default defineComponent({
   },
   computed: {
     images() {
-      const urls = []
-      this.slice.items.forEach((item) => {
+      const urls: string[] = []
+      this.slice.items.forEach((item: any) => {
         urls.push(item.image.url)
       })
       return urls
