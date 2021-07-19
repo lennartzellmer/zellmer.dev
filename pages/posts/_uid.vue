@@ -60,7 +60,6 @@ import SlicesBlock from '@/components/slices/SlicesBlock.vue'
 
 export default defineComponent({
   components: { SlicesBlock },
-  layout: 'post',
   setup() {
     const { error, $prismic } = useContext()
     const route = useRoute()

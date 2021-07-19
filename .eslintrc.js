@@ -27,6 +27,7 @@ module.exports = {
       },
     ],
     'vue/singleline-html-element-content-newline': 0,
+    'tailwindcss/no-custom-classname': 0,
   },
   settings: {
     'vue-i18n': {

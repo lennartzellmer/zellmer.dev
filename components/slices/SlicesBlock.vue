@@ -18,14 +18,20 @@
   </article>
 </template>
 
-<script>
+<script lang="ts">
 import TextSlice from '@/components/slices/TextSlice.vue'
 import ImageSlice from '@/components/slices/ImageSlice.vue'
 import CodeSlice from '@/components/slices/CodeSlice.vue'
+import { defineComponent } from '@nuxtjs/composition-api'
 
-export default {
+export default defineComponent({
   name: 'SlicesBlock',
   components: { TextSlice, ImageSlice, CodeSlice },
-  props: ['slices'],
-}
+  props: {
+    slices: {
+      required: true,
+      type: Object,
+    },
+  },
+})
 </script>

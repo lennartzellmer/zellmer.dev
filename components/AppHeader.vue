@@ -16,6 +16,7 @@
         @click.native="animate"
       >
         <svg
+          id="morphing-demo"
           width="100"
           height="100"
           fill="none"
@@ -32,7 +33,7 @@
         >
           <client-only>
             <path
-              id="blob"
+              id="morphing-path"
               stroke="currentColor"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -167,26 +168,32 @@
   </header>
 </template>
 
-<script type="ts">
-import { defineComponent } from '@nuxtjs/composition-api'
-import generator from 'blobshape'
-import dynamics from 'dynamics.js'
+<script lang="ts">
+import { defineComponent, useContext } from '@nuxtjs/composition-api'
+import blobshape from 'blobshape'
 
 export default defineComponent({
   setup() {
-    const svgPath = generator({ size: 100, growth: 5, edges: 10, seed: null })
+    const { $anime } = useContext()
+    const svgPath = blobshape({
+      size: 100,
+      growth: 5,
+      edges: 10,
+      seed: null,
+    })
 
     const animate = () => {
-      const svgPath = generator({ size: 100, growth: 5, edges: 10, seed: null })
-      const element = document.getElementById('blob')
-      if (!element) return
-      const config = {
-        type: dynamics.spring,
-        frequency: 200,
-        friction: 200,
-        duration: 700,
-      }
-      dynamics.animate(element, { d: svgPath.path }, config)
+      const newSvgPath = blobshape({
+        size: 100,
+        growth: 5,
+        edges: 10,
+        seed: null,
+      })
+      $anime({
+        targets: '#morphing-path',
+        d: [{ value: newSvgPath.path }],
+        easing: 'easeOutElastic(1, .8)',
+      })
     }
 
     return { svgPath, animate }

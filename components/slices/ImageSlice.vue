@@ -36,10 +36,17 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from '@nuxtjs/composition-api'
+
+export default defineComponent({
   name: 'ImageSlice',
-  props: ['slice'],
+  props: {
+    slice: {
+      required: true,
+      type: Object,
+    },
+  },
   data() {
     return {
       index: null,
@@ -54,5 +61,5 @@ export default {
       return urls
     },
   },
-}
+})
 </script>

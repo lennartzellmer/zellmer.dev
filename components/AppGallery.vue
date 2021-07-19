@@ -207,7 +207,7 @@
               navigation__image__container
             "
             :class="{ 'ring ring-gray-300 opacity-100': i === imgIndex }"
-            @click.stop="onClickThumb(img, i)"
+            @click.stop="onClickThumb(i)"
           >
             <NuxtPicture
               width="300"
@@ -263,7 +263,7 @@ export default {
     },
   },
   watch: {
-    index(val, prev) {
+    index(val) {
       this.imgIndex = val
     },
   },
@@ -409,7 +409,7 @@ export default {
         this.imgIndex = 0
       }
     },
-    onClickThumb(image, index) {
+    onClickThumb(index) {
       this.imgIndex = index
     },
   },

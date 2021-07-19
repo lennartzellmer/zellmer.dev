@@ -5,8 +5,8 @@
   </pre>
 </template>
 
-<script>
-import { onMounted } from '@nuxtjs/composition-api'
+<script lang="ts">
+import { defineComponent, onMounted } from '@nuxtjs/composition-api'
 import Prism from 'prismjs'
 import '~/assets/css/prism-theme.css'
 
@@ -20,9 +20,14 @@ import 'prismjs/components/prism-bash'
 import 'prismjs/components/prism-yaml'
 import 'prismjs/components/prism-toml'
 
-export default {
+export default defineComponent({
   name: 'CodeSlice',
-  props: ['slice'],
+  props: {
+    slice: {
+      required: true,
+      type: Object,
+    },
+  },
   setup() {
     onMounted(() => {
       window.Prism = window.Prism || {}
@@ -30,5 +35,5 @@ export default {
       Prism.highlightAll() // highlight your code on mount
     })
   },
-}
+})
 </script>

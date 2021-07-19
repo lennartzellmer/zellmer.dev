@@ -1,10 +1,17 @@
 <template>
-  <prismic-rich-text class="mt-8 break-words" :field="slice.primary.text" />
+  <div>
+    <prismic-rich-text class="mt-8 break-words" :field="slice.primary.text" />
+  </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+export default defineComponent({
   name: 'TextSlice',
-  props: ['slice'],
-}
+  props: {
+    slice: {
+      required: true,
+      type: Object,
+    },
+  },
+})
 </script>
