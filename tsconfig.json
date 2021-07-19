@@ -21,6 +21,7 @@
       "@nuxt/types",
       "@nuxt/vue-app",
       "@nuxt/content",
+      "@types/animejs",
       "webpack-env"
     ]
   },

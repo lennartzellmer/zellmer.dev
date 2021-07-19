@@ -1713,6 +1713,11 @@
     lodash.merge "^4.6.2"
     lodash.uniq "^4.5.0"
 
+"@types/animejs@^3.1.4":
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/@types/animejs/-/animejs-3.1.4.tgz#92f90d1c800b9041b64a7da9da0e68e690146b0e"
+  integrity sha512-WUjeFT2SXd6intfE6cg6eL1jk/JL88JqM2gC4WqO4iHLmbCvHUq6aoLK13lGpDWs4FtS2PHoYraJZ0dEx99Dyg==
+
 "@types/anymatch@*":
   version "3.0.0"
   resolved "https://registry.npmjs.org/@types/anymatch/-/anymatch-3.0.0.tgz"
@@ -2555,7 +2560,7 @@ alphanum-sort@^1.0.0:
 
 animejs@^3.2.1:
   version "3.2.1"
-  resolved "https://registry.npmjs.org/animejs/-/animejs-3.2.1.tgz"
+  resolved "https://registry.yarnpkg.com/animejs/-/animejs-3.2.1.tgz#de9fe2e792f44a777a7fdf6ae160e26604b0cdda"
   integrity sha512-sWno3ugFryK5nhiDm/2BKeFCpZv7vzerWUcUPyAZLDhMek3+S/p418ldZJbJXo5ZUOpfm2kP2XRO4NJcULMy9A==
 
 ansi-align@^3.0.0:
@@ -4835,11 +4840,6 @@ duplexify@^3.4.2, duplexify@^3.6.0:
     inherits "^2.0.1"
     readable-stream "^2.0.0"
     stream-shift "^1.0.0"
-
-dynamics.js@^1.1.5:
-  version "1.1.5"
-  resolved "https://registry.npmjs.org/dynamics.js/-/dynamics.js-1.1.5.tgz"
-  integrity sha1-uQvcM2Bc7+ZSuEFucB95v27vzjI=
 
 ee-first@1.1.1:
   version "1.1.1"
