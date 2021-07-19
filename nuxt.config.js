@@ -43,7 +43,6 @@ export default {
   prismic: {
     endpoint: 'https://zellmer-dev.cdn.prismic.io/api/v2',
     modern: true,
-    preview: false,
   },
 
   image: {
