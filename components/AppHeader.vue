@@ -192,7 +192,7 @@ export default defineComponent({
       $anime({
         targets: '#morphing-path',
         d: [{ value: newSvgPath.path }],
-        easing: 'easeOutElastic(1, .8)',
+        easing: 'spring(1, 80, 15, 20)',
       })
     }
 
