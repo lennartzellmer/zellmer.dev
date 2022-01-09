@@ -88,13 +88,13 @@ export default defineComponent({
     },
   },
   setup({ post }) {
-    const formatedDate = new Date(
+    const formattedDate = new Date(
       post.first_publication_date
-    ).toLocaleDateString('de-DE', {
+    ).toLocaleDateString('en-EN', {
       year: 'numeric',
       month: 'long',
     })
-    return { formatedDate }
+    return { formattedDate }
   },
 })
 </script>
