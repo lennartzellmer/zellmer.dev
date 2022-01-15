@@ -2,9 +2,13 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  mode: process.env.NODE_ENV ? 'jit' : undefined,
-  purge: [],
-  darkMode: false, // or 'media' or 'class'
+  content: [
+    './components/**/*.{js,vue,ts}',
+    './layouts/**/*.vue',
+    './pages/**/*.vue',
+    './plugins/**/*.{js,ts}',
+    './nuxt.config.{js,ts}',
+  ],
   theme: {
     fontFamily: {
       sans: ['Inter', ...defaultTheme.fontFamily.sans],
@@ -25,7 +29,7 @@ module.exports = {
         },
       },
       colors: {
-        gray: colors.warmGray,
+        gray: colors.stone,
         green: colors.green,
         yellow: colors.yellow,
         primary: {
