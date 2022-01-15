@@ -58,7 +58,7 @@
       "
     >
       <span class="font-mono text-sm text-slate-11">
-        {{ formatedDate }}
+        {{ formattedDate }}
       </span>
       <h2 class="mb-3 text-2xl font-bold text-slate-12 sm:text-2xl">
         {{ $prismic.asText(post.data.headline) }}
