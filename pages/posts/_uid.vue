@@ -8,7 +8,7 @@
         mx-auto
         w-full
         max-w-6xl
-        md:auto-rows-max md:grid-cols-12 md:grid md:px-6
+        md:grid md:grid-cols-12 md:auto-rows-max md:px-6
       "
     >
       <h1

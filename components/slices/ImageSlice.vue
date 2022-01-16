@@ -9,11 +9,11 @@
         overflow-hidden
         col-span-1
         rounded-lg
+        focus:outline-none
         hover:ring-2
         focus:ring
         ring-slate-7
         transition
-        focus:outline-none
       "
       @click="index = i"
     >

@@ -2,12 +2,13 @@
   <NuxtLink
     class="
       group
+      flex
       overflow-hidden
+      flex-col
       rounded-lg
-      cursor-pointer
       focus:outline-none
+      cursor-pointer
       sm:flex-row
-      flex flex-col
     "
     :to="'/posts/' + post.uid"
   >
@@ -17,13 +18,13 @@
         overflow-hidden
         relative
         z-20
-        flex-shrink-0
+        shrink-0
         w-full
         h-36
         bg-gray-400
         rounded-lg
         transition-all
-        sm:h-auto sm:w-48 sm:group-hover:w-52 sm:group-focus:w-52
+        sm:w-48 sm:group-hover:w-52 sm:group-focus:w-52 sm:h-auto
       "
     >
       <NuxtPicture
@@ -44,7 +45,6 @@
         w-full
         rounded-r-lg
         transition-all
-        transform
         sm:py-8
         sm:pr-10
         sm:group-hover:pr-6
@@ -64,12 +64,7 @@
         {{ $prismic.asText(post.data.headline) }}
       </h2>
       <p
-        class="
-          text-base
-          leading-7
-          text-slate-11
-          overflow-ellipsis overflow-hidden
-        "
+        class="overflow-hidden text-base leading-7 text-slate-11 text-ellipsis"
       >
         {{ $prismic.asText(post.data.description) }}
       </p>

@@ -2,14 +2,15 @@
   <transition name="modal">
     <div
       class="
+        flex
         fixed
         inset-0
+        z-[9998]
+        flex-col
         justify-center
         items-center
         px-0
-        sm:py-8 sm:px-8
-        flex flex-col
-        z-[9998]
+        sm:p-8
       "
       @click="close"
     >
@@ -17,8 +18,8 @@
         class="
           absolute
           inset-0
-          bg-gray-900 bg-opacity-95
           z-[997]
+          bg-gray-900 bg-opacity-95
           gallery__background
         "
       />
@@ -28,6 +29,7 @@
           absolute
           top-2
           right-2
+          z-[999]
           p-2
           w-12
           h-12
@@ -35,10 +37,9 @@
           hover:text-green-400
           bg-gray-800
           rounded-md
-          opacity-0
-          hover:transform hover:scale-110
           focus:outline-none
-          z-[999]
+          opacity-0
+          hover:scale-110
           gallery__navigation_button
         "
         @click="close"
@@ -68,6 +69,7 @@
           bottom-4
           left-2
           hover:left-1.5
+          z-[999]
           p-2
           w-12
           h-12
@@ -75,14 +77,12 @@
           hover:text-green-400
           bg-gray-800
           rounded-md
+          focus:outline-none
           opacity-0
           transition-all
-          transform
           cursor-pointer
-          focus:outline-none
           sm:bottom-1/2 sm:translate-y-1/2
           gallery__navigation_button
-          z-[999]
         "
         @click.stop="onPrev"
       >
@@ -108,13 +108,13 @@
         class="
           flex
           overflow-x-hidden
+          z-[998]
           w-full
           max-w-full
           h-full
           bg-black
           sm:rounded-lg
           md:max-w-7xl
-          z-[998]
           gallery__image_container
         "
         @click.stop="onNext"
@@ -135,6 +135,7 @@
           right-2
           hover:right-1.5
           bottom-4
+          z-[999]
           p-2
           w-12
           h-12
@@ -142,14 +143,12 @@
           hover:text-green-400
           bg-gray-800
           rounded-md
+          focus:outline-none
           opacity-0
           transition-all
-          transform
           cursor-pointer
-          focus:outline-none
           sm:bottom-1/2 sm:translate-y-1/2
           gallery__navigation_button
-          z-[999]
         "
         @click.stop="onNext"
       >
@@ -175,12 +174,12 @@
         ref="gallery"
         class="
           hidden
+          z-[999]
           mt-4
           w-full
           max-w-7xl
           whitespace-nowrap
           sm:flex sm:flex-col sm:justify-center
-          z-[999]
         "
       >
         <span
@@ -196,14 +195,15 @@
             class="
               object-cover
               overflow-hidden
+              grow-0
+              shrink
               w-20
               h-20
               rounded-md
+              focus:outline-none
               opacity-60
               hover:opacity-100
               cursor-pointer
-              focus:outline-none
-              flex-shrink flex-grow-0
               navigation__image__container
             "
             :class="{ 'ring ring-gray-300 opacity-100': i === imgIndex }"

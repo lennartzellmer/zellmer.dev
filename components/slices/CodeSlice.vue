@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { defineComponent, onMounted } from '@nuxtjs/composition-api'
-import Prism from 'prismjs'
+import { highlightAll } from 'prismjs'
 import '~/assets/css/prism-theme.css'
 
 import 'prismjs/components/prism-markup-templating'
@@ -31,7 +31,7 @@ export default defineComponent({
   setup() {
     onMounted(() => {
       window.Prism = window.Prism || {}
-      Prism.highlightAll() // highlight your code on mount
+      highlightAll() // highlight your code on mount
     })
   },
 })

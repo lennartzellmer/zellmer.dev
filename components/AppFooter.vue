@@ -22,13 +22,7 @@
     >
       <div class="flex col-span-10 col-start-2 md:col-span-5 md:col-start-1">
         <NuxtPicture
-          class="
-            object-contain
-            opacity-100
-            mix-blend-lighten
-            filter
-            brightness-105
-          "
+          class="object-contain opacity-100 mix-blend-lighten brightness-105"
           :src="bio.data.profile_image.url"
           alt="article illustration"
           width="800"
@@ -43,7 +37,7 @@
           flex
           items-center
           mt-8
-          md:col-start-auto md:col-span-7
+          md:col-span-7 md:col-start-auto
           col-span-10 col-start-2
         "
       >

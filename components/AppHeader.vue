@@ -61,12 +61,10 @@
             items-center
             p-1.5
             hover:text-green-400
-            focus:bg-gray-100 focus:rounded-full focus:ring-2
+            focus:bg-gray-100 focus:rounded-full focus:outline-none focus:ring-2
             ring-green-300
             transition
-            transform
-            hover:-rotate-6 hover:scale-105
-            focus:outline-none
+            hover:scale-105 hover:-rotate-6
             sm:p-2.5
           "
           href="mailto:lennart+blog@zellmer.dev"
@@ -96,12 +94,10 @@
             items-center
             p-1.5
             hover:text-green-400
-            focus:bg-gray-100 focus:rounded-full focus:ring-2
+            focus:bg-gray-100 focus:rounded-full focus:outline-none focus:ring-2
             ring-green-300
             transition
-            transform
-            hover:rotate-6 hover:scale-105
-            focus:outline-none
+            hover:scale-105 hover:rotate-6
             sm:p-2.5
           "
           href="https://github.com/lennartzellmer"
@@ -133,12 +129,10 @@
             p-1.5
             h-full
             hover:text-green-400
-            focus:bg-gray-100 focus:rounded-full focus:ring-2
+            focus:bg-gray-100 focus:rounded-full focus:outline-none focus:ring-2
             ring-green-300
             transition
-            transform
             hover:scale-105 hover:-rotate-6
-            focus:outline-none
             sm:p-2.5
           "
           href="https://twitter.com/ZuTeilen"

@@ -6,11 +6,11 @@ module.exports = {
   },
   extends: [
     '@nuxtjs/eslint-config-typescript',
-    'plugin:prettier/recommended',
     'plugin:nuxt/recommended',
     'plugin:vue/recommended',
-    'plugin:prettier-vue/recommended',
     'plugin:tailwindcss/recommended',
+    'plugin:prettier-vue/recommended',
+    'prettier',
   ],
   plugins: ['prettier', 'tailwindcss'],
   rules: {
@@ -28,6 +28,7 @@ module.exports = {
     ],
     'vue/singleline-html-element-content-newline': 0,
     'tailwindcss/no-custom-classname': 0,
+    'vue/multi-word-component-names': 0,
   },
   settings: {
     'vue-i18n': {
