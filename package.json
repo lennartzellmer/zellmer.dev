@@ -11,7 +11,7 @@
     "lint": "yarn lint:js"
   },
   "dependencies": {
-    "@nuxtjs/composition-api": "0.24.6",
+    "@nuxtjs/composition-api": "0.31.0",
     "@nuxtjs/prismic": "^1.4.0",
     "animejs": "^3.2.1",
     "blobshape": "^1.0.0",
