@@ -20,7 +20,6 @@
       "@types/node",
       "@nuxt/types",
       "@nuxt/vue-app",
-      "@nuxt/content",
       "@types/animejs",
       "@types/prismjs",
       "webpack-env"
