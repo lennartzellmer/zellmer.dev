@@ -7767,10 +7767,10 @@ number-is-nan@^1.0.0:
   resolved "https://registry.npmjs.org/number-is-nan/-/number-is-nan-1.0.1.tgz"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
-nuxt-animejs@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.npmjs.org/nuxt-animejs/-/nuxt-animejs-1.2.1.tgz"
-  integrity sha512-cTdOxSB76k5Fspp5ia4hjMd/+wsNqKm/AWmDU5yCOnnuc7/0faudpKFOmDmgVe5z+IXYxPf7jyXHDmLd8agxkg==
+nuxt-animejs@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/nuxt-animejs/-/nuxt-animejs-1.2.2.tgz#a542222a0bd4c45d5b3d0d614a87883a2fd70b8a"
+  integrity sha512-umDCwIQV8N7IsZqlKmOJYGaoiWAZkw/GPun9a494vS9wMCZ6/3vkD8b5qg5E/OvsbQyypfKG+DtGksGvqrYLYQ==
   dependencies:
     animejs "^3.2.1"
 
