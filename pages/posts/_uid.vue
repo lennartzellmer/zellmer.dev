@@ -54,6 +54,7 @@ import {
   reactive,
   useContext,
   useFetch,
+  useMeta,
   useRoute,
 } from '@nuxtjs/composition-api'
 import SlicesBlock from '@/components/slices/SlicesBlock.vue'
@@ -68,6 +69,8 @@ export default defineComponent({
       post: null,
     })
 
+    const { title, meta } = useMeta()
+
     useFetch(async () => {
       const response = await $prismic.api.getByUID(
         'blog-post',
@@ -76,6 +79,51 @@ export default defineComponent({
 
       state.post = response.data
 
+      title.value = $prismic.asText(response.data.headline)
+
+      const socialGeneralCard = response.data.social.find((e: any) => {
+        return e.slice_type === 'general_card'
+      })?.primary
+
+      if (socialGeneralCard) {
+        meta.value = [
+          {
+            hid: 'description',
+            name: 'description',
+            content: `${
+              socialGeneralCard.description
+                ? $prismic.asText(response.data.social[0].primary.description)
+                : ''
+            }`,
+          },
+          {
+            property: 'og:title',
+            content: `${
+              socialGeneralCard.title
+                ? $prismic.asText(socialGeneralCard.title)
+                : ''
+            }`,
+            hid: 'og:title',
+          },
+          {
+            property: 'og:image',
+            content: `${
+              socialGeneralCard.image ? socialGeneralCard.image.url : ''
+            }`,
+            hid: 'og:image',
+          },
+          {
+            property: 'og:description',
+            content: `${
+              response.data.social[0]?.primary?.description
+                ? $prismic.asText(response.data.social[0].primary.description)
+                : ''
+            }`,
+            hid: 'og:description',
+          },
+        ]
+      }
+
       if (!state.post) {
         error({ statusCode: 404, message: 'Page not found' })
       }
@@ -83,5 +131,6 @@ export default defineComponent({
 
     return { state }
   },
+  head: {},
 })
 </script>

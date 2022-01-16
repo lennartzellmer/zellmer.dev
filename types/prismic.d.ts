@@ -58,6 +58,12 @@ interface VuePrismic {
   richTextAsPlain: (field: string) => string
   predicates: typeof Predicates
   asLink(link: any, linkResolver?: (doc: any) => string): string
+  asHtml(
+    richText: any,
+    linkResolver?: (doc: any) => string,
+    serializer?: HTMLSerializer<string>
+  ): string
+  asText(richText: any, joinString?: string): string
 }
 
 type PrismicVue<T> = VuePrismic & T

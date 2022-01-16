@@ -30,7 +30,7 @@ export default defineComponent({
   props: {
     slices: {
       required: true,
-      type: Object,
+      type: Array,
     },
   },
 })
