@@ -16,11 +16,15 @@ import {
   ref,
   useContext,
   useFetch,
+  useMeta,
 } from '@nuxtjs/composition-api'
 
 export default defineComponent({
   setup() {
     const { $prismic } = useContext()
+
+    const { title } = useMeta()
+    title.value = 'Blog'
 
     // fetch all posts
     const posts = ref<any>(null)
@@ -34,5 +38,6 @@ export default defineComponent({
 
     return { posts }
   },
+  head: {},
 })
 </script>
