@@ -9,6 +9,7 @@ module.exports = {
     './plugins/**/*.{js,ts}',
     './nuxt.config.{js,ts}',
   ],
+  safelist: ['line-through'],
   theme: {
     fontFamily: {
       sans: ['Inter', ...defaultTheme.fontFamily.sans],
