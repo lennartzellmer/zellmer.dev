@@ -30,7 +30,10 @@ export default defineComponent({
     const posts = ref<any>(null)
     const { fetch: fetchPosts } = useFetch(async () => {
       const response = await $prismic.api.query(
-        $prismic.predicates.at('document.type', 'blog-post')
+        $prismic.predicates.at('document.type', 'blog-post'),
+        {
+          orderings: '[document.first_publication_date desc]',
+        }
       )
       posts.value = response.results
     })
